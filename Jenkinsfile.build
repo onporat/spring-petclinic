@@ -16,7 +16,11 @@ pipeline {
 
         stage ('Build') {
             steps {
-                sh 'mvn clean compile test package' 
+                sh '''
+                  mkdir -p /tmp/target && \
+                  mvn clean compile test package && \
+                  cp -v target/*.jar /tmp/target/
+                '''
             }
             post {
                 failure {

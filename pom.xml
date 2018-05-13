@@ -199,29 +199,6 @@
           </dependency>
         </dependencies>
       </plugin>
-        <plugin>
-            <artifactId>maven-antrun-plugin</artifactId>
-            <version>1.8</version>
-            <executions>
-                <execution>
-                    <id>copy</id>
-                    <phase>package</phase>
-                    <configuration>
-                        <target>
-                            <echo>ANT TASK - copying files....</echo>
-                            <copy todir="/tmp/target" overwrite="true" flatten="true">
-                                <fileset dir="${basedir}" >
-                                    <include name="target/*.jar" />
-                                </fileset>
-                            </copy>
-                        </target>
-                    </configuration>
-                    <goals>
-                        <goal>run</goal>
-                    </goals>
-                </execution>
-            </executions>
-        </plugin>
     </plugins>
   </build>
   <reporting>
